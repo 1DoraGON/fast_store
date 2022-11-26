@@ -1,0 +1,110 @@
+/* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
+html,
+body,
+.view {
+  height: 100%; }
+
+/* Half Page Carousel itself*/
+.carousel {
+  height: 50%; }
+  .carousel .carousel-inner {
+    height: 100%; }
+    .carousel .carousel-inner .carousel-item,
+    .carousel .carousel-inner .active {
+      height: 100%; }
+
+/* Adjustment for mobile devices*/
+@media (max-width: 776px) {
+  .carousel {
+    height: 100%; } }
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #929FBA; }
+
+  .container_i{
+    height: 400px;
+    width: 350px;
+    position: relative;
+  }
+  .container_i .wrapper{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px dashed #c2cdda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .wrapper.active{
+    border: none;
+  }
+  .wrapper .image{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .wrapper .icon{
+    font-size: 100px;
+    color: #4e73df;
+    text-align: center;
+  }
+  .wrapper .text{
+    font-size: 20px;
+    font-weight: 500;
+    color: #4e73df;
+  }
+  .wrapper .cancel-btn i{
+    position: absolute;
+    font-size: 20px;
+    right: 15px;
+    top: 15px;
+    color: #4e73df;
+    cursor: pointer;
+    display: none;
+  }
+
+  .wrapper.active:hover .cancel-btn i{
+    display: block;
+  }
+  .wrapper .cancel-btn i:hover{
+    color: #e74c3c;
+  }
+  .wrapper .file-name{
+    position: absolute;
+    text-align: center;
+    bottom: 0px;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 18px;
+    color: #fff;
+    display: none;
+    background: #4e73df;
+  }
+  .wrapper.active:hover .file-name{
+    display: block;
+  }
+/* .container #custom-btn{
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  height: 2rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+} */

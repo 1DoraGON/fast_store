@@ -1,0 +1,161 @@
+
+
+{% extends 'supervisor/tables-base.html' %}
+{% load static %}
+{% block content %}
+<!-- Page Wrapper -->
+<div id="wrapper">
+  
+  <!-- Sidebar -->
+  {% include 'supervisor/sidebar.html' %}
+  <!-- End of Sidebar -->
+  
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    
+    <!-- Main Content -->
+    <div id="content">
+      
+      <!-- Topbar -->
+      {% include 'supervisor/topbar.html' %}
+      <!-- End of Topbar -->
+      
+      <!-- Begin Page Content -->
+      
+      
+      <!-- /.container-fluid -->
+      <div class="container mt-5">
+              <div class="row justify-content-center">
+              <div class="col-9">
+                  <div class="h1 text-center mb-5">Add Supervisor</div>            
+                  <form enctype="multipart/form-data" method="POST">
+                      {% csrf_token %}
+                      <!-- 2 column grid layout with text inputs for the first and last names -->
+                      
+                      <!-- Email input -->
+{% comment %}                       <div class="form-outline mb-4">
+                          <label class="form-label" for="form3Example3">Email address</label>
+                          <input class="form-control" type="text" placeholder="Item Name">
+                          <div id="email-selector" class="list-group display-inline" style="display: none;">
+                          </div>
+                      </div> {% endcomment %}
+                     <div class="row d-flex justify-content-center" id="images">
+                        <div class="col-sm container_image_0">
+
+                            {% include 'utils/image-preview.html' %}
+                        </div>
+                      </div>
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example3">Title</label>
+                        {{ form.title }}
+                        
+                    </div>
+                    <label class="form-check-label mb-1" for="form3Example3">Icon</label>
+                    <div class="form-check ml-2">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="P" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            <span class="badge badge-primary">Bestseller</span>
+                        </div>
+                      <div class="form-check ml-2">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="S">
+                        <label class="form-check-label" for="exampleRadios2">
+                            <span class="badge badge-secondary">VIP</span>
+                        </label>
+                      </div>
+                      <div class="form-check ml-2">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="D">
+                        <label class="form-check-label" for="exampleRadios2">
+                            <span class="badge badge-danger">New</span>
+                        </label>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example3">Email address</label>
+                        {{ form.price }}
+                        
+                    </div>
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example3">Email address</label>
+                        {{ form.quantity }}
+                        
+                    </div>
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example3">Email address</label>
+                        {{ form.discount_price }}
+                        
+                    </div>
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example3">Email address</label>
+                        {{ form.category }}
+                        
+                    </div>
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example3">Email address</label>
+                        {{ form.description }}
+                        
+                    </div>
+                      
+                      <!-- Checkbox -->
+{% comment %}                       <div class="form-outline mb-4">
+                          <label class="form-check-label" for="form2Example33">
+                            Supervisor type
+                          </label>
+                          
+                      </div> {% endcomment %}
+                    
+
+                    
+                      <!-- Submit button -->
+                      <button id="submit" type="submit" class="btn btn-primary btn-block mb-4">Add item</button>
+                    </form>
+              </div>
+          </div>
+      </div>
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'supervisor/add-admin-scripts.html' %}
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script src="{% static 'js/utils/image-uploader.js' %}"></script>
+    {% endblock content %}

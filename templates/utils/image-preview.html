@@ -1,0 +1,24 @@
+{% load static %}
+<div class="container_i">
+    <div class="wrapper">
+       <div class="image">
+            <img class="primary-image custom-btn" src="{% static 'img/transparent.png' %}" onclick="defaultBtnActive()" alt="">
+       </div>
+       <div class="content">
+          <div class="icon">
+             <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <div class="text">
+             No file chosen, yet!
+          </div>
+       </div>
+       <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+       </div>
+       <div class="file-name">
+          File name here
+       </div>
+    </div>
+    <input name="image" class="default-btn" type="file" accept=".jpg , .jpeg , .png" hidden>
+
+ </div>
